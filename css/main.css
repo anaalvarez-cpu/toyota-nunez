@@ -21,8 +21,8 @@
   --color-error:      #C00018;
 
   /* Typography */
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body:    'Barlow', sans-serif;
+  --font-display: 'Flexo', Arial, sans-serif;
+  --font-body:    'Flexo', Arial, sans-serif;
 
   /* Spacing scale */
   --space-xs:   0.5rem;
@@ -58,8 +58,8 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-dark);
-  background: var(--color-white);
+  color: var(--color-white);
+  background: var(--color-dark);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -594,6 +594,13 @@ ul { list-style: none; }
   top: calc(var(--header-h) + 1.5rem);
 }
 
+@media (max-width: 899px) {
+  .about__col-img {
+    position: static;
+    top: auto;
+  }
+}
+
 .about__img {
   width: 100%;
   height: auto;
@@ -601,6 +608,39 @@ ul { list-style: none; }
   display: block;
 }
 
+.about__text {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.about__text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-gray-dark);
+}
+
+.about__text strong {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.about__values-inline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.about__values-inline span {
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.about__values-inline span + span::before {
+  content: '•';
+  color: var(--color-gray);
+  margin-right: 0.75rem;
+}
 
 /* ── BRANCHES ────────────────────────────────────────────── */
 .branches__grid {
