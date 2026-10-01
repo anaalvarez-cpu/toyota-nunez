@@ -21,8 +21,8 @@
   --color-error:      #C00018;
 
   /* Typography */
-  --font-display: 'Flexo', Arial, sans-serif;
-  --font-body:    'Flexo', Arial, sans-serif;
+  --font-display: 'Toyota Type', Arial, sans-serif;
+  --font-body:    'Toyota Type', Arial, sans-serif;
 
   /* Spacing scale */
   --space-xs:   0.5rem;
@@ -582,23 +582,9 @@ ul { list-style: none; }
   gap: var(--space-xl);
   align-items: start;
 }
-@media (min-width: 900px) {
-  .about__grid {
-    grid-template-columns: 2fr 3fr;
-    gap: var(--space-xl) var(--space-2xl);
-  }
-}
 
 .about__col-img {
-  position: sticky;
-  top: calc(var(--header-h) + 1.5rem);
-}
-
-@media (max-width: 899px) {
-  .about__col-img {
-    position: static;
-    top: auto;
-  }
+  position: relative;
 }
 
 .about__img {
@@ -608,9 +594,47 @@ ul { list-style: none; }
   display: block;
 }
 
+@media (min-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-xl);
+    align-items: stretch;
+  }
+
+  .about__text {
+    align-content: center;
+  }
+
+  /* La imagen no define la altura de la fila: la define el texto.
+     Se posiciona absoluta y llena exactamente la altura de la columna. */
+  .about__col-img {
+    min-height: clamp(480px, 50vw, 700px);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+  }
+
+  .about__img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 .about__text {
   display: grid;
   gap: 1.25rem;
+}
+
+/* Encabezado alineado a la izquierda (usado en Quiénes somos) */
+.section__header--left {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.section__header--left .section__title::after {
+  left: 0;
+  transform: none;
 }
 
 .about__text p {
