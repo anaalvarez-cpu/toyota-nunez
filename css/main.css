@@ -1017,6 +1017,40 @@ ul { list-style: none; }
 .branches__map {
   margin-top: var(--space-xl);
 }
+/* Selector de sucursal sobre el mapa */
+.branches__map-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+.branches__map-tab {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  min-width: 8.5rem;
+  padding: 0.625rem 1.25rem;
+  white-space: nowrap;
+  border: 2px solid var(--color-red);
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-red);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.branches__map-tab:hover { background: #FDE7E9; }
+.branches__map-tab.is-active,
+.branches__map-tab.is-active:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+.branches__map-tab:focus-visible {
+  outline: 3px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
 .branches__map-frame {
   border-radius: var(--radius-lg);
   overflow: hidden;

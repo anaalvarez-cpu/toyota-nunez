@@ -301,3 +301,23 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   $$('.vehicle-card, .benefit, .branch, .hours-block').forEach(el => obs.observe(el));
 })();
 
+/* ── Mapa de sucursales: cambia el pin según la sucursal elegida ── */
+(function () {
+  const map = document.getElementById('branches-map');
+  const tabs = document.querySelectorAll('.branches__map-tab');
+  if (!map || !tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      if (tab.classList.contains('is-active')) return;
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-pressed', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-pressed', 'true');
+      map.src = tab.dataset.mapSrc;
+      map.title = 'Ubicación de la ' + tab.dataset.name;
+    });
+  });
+})();

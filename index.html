@@ -511,9 +511,13 @@
 
         <!-- Map -->
         <div class="branches__map">
+          <div class="branches__map-tabs" role="group" aria-label="Elegí la sucursal para ver en el mapa">
+            <button type="button" class="branches__map-tab is-active" aria-pressed="true" data-name="Sucursal Nuñez" data-map-src="https://maps.google.com/maps?q=Av.+Presidente+Figueroa+Alcorta+7576,+CABA,+Argentina&amp;z=16&amp;hl=es&amp;output=embed">Nuñez</button>
+            <button type="button" class="branches__map-tab" aria-pressed="false" data-name="Sucursal Recoleta" data-map-src="https://maps.google.com/maps?q=Tagle+2653,+CABA,+Argentina&amp;z=16&amp;hl=es&amp;output=embed">Recoleta</button>
+          </div>
           <div class="branches__map-frame">
-            <iframe title="Ubicación de sucursales Toyota Nuñez"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26277.5!2d-58.427!3d-34.575!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1ses!2sar!4v1700000000"
+            <iframe id="branches-map" title="Ubicación de la Sucursal Nuñez"
+              src="https://maps.google.com/maps?q=Av.+Presidente+Figueroa+Alcorta+7576,+CABA,+Argentina&amp;z=16&amp;hl=es&amp;output=embed"
               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
